@@ -1,0 +1,118 @@
+#=====================================================
+# P A T I E N T  S O U R C E - 346844 voxels
+#=====================================================
+
+###############################
+#######  L I V E R - beta #####
+###############################
+
+/gate/source/addSource activityLiverBminus voxel
+/gate/source/activityLiverBminus/reader/insert image
+/gate/source/activityLiverBminus/imageReader/translator/insert linear
+/gate/source/activityLiverBminus/imageReader/linearTranslator/setScale {liverActivity} MBq
+/gate/source/activityLiverBminus/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverBminus/imageReader/verbose  1
+/gate/source/activityLiverBminus/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverBminus/dump 1 
+
+/gate/source/activityLiverBminus/attachTo patient
+
+/gate/source/activityLiverBminus/setForcedUnstableFlag true
+/gate/source/activityLiverBminus/setForcedHalfLife 581472. s
+/gate/source/activityLiverBminus/gps/particle gamma 
+/gate/source/activityLiverBminus/gps/energytype UserSpectrum
+/gate/source/activityLiverBminus/gps/setSpectrumFile ../data/Lu-177_Bminus_modified.txt
+/gate/source/activityLiverBminus/setIntensity 1.000E+00
+/gate/source/activityLiverBminus/gps/angtype iso 
+
+################################
+#######  L I V E R - gamma #####
+################################
+
+/gate/source/addSource activityLiverGamma voxel
+/gate/source/activityLiverGamma/reader/insert image
+/gate/source/activityLiverGamma/imageReader/translator/insert linear
+/gate/source/activityLiverGamma/imageReader/linearTranslator/setScale {liverActivity} MBq
+/gate/source/activityLiverGamma/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverGamma/imageReader/verbose  1
+/gate/source/activityLiverGamma/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverGamma/dump 1 
+
+/gate/source/activityLiverGamma/attachTo patient
+
+/gate/source/activityLiverGamma/setForcedUnstableFlag true
+/gate/source/activityLiverGamma/setForcedHalfLife 581472. s
+/gate/source/activityLiverGamma/gps/particle gamma 
+/gate/source/activityLiverGamma/gps/energytype UserSpectrum
+/gate/source/activityLiverGamma/gps/setSpectrumFile ../data/Lu-177_G.txt
+/gate/source/activityLiverGamma/setIntensity 1.803E-01
+/gate/source/activityLiverGamma/gps/angtype iso 
+
+################################
+#######  L I V E R - X #########
+################################
+
+/gate/source/addSource activityLiverX voxel
+/gate/source/activityLiverX/reader/insert image
+/gate/source/activityLiverX/imageReader/translator/insert linear
+/gate/source/activityLiverX/imageReader/linearTranslator/setScale {liverActivity} MBq
+/gate/source/activityLiverX/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverX/imageReader/verbose  1
+/gate/source/activityLiverX/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverX/dump 1 
+
+/gate/source/activityLiverX/attachTo patient
+
+/gate/source/activityLiverX/setForcedUnstableFlag true
+/gate/source/activityLiverX/setForcedHalfLife 581472. s
+/gate/source/activityLiverX/gps/particle gamma 
+/gate/source/activityLiverX/gps/energytype UserSpectrum
+/gate/source/activityLiverX/gps/setSpectrumFile ../data/Lu-177_X.txt
+/gate/source/activityLiverX/setIntensity 1.374E+00
+/gate/source/activityLiverX/gps/angtype iso 
+
+#######################################
+#######  L I V E R - Int. Conv e- #####
+#######################################
+
+/gate/source/addSource activityLiverIE voxel
+/gate/source/activityLiverIE/reader/insert image
+/gate/source/activityLiverIE/imageReader/translator/insert linear
+/gate/source/activityLiverIE/imageReader/linearTranslator/setScale {liverActivity} MBq
+/gate/source/activityLiverIE/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverIE/imageReader/verbose  1
+/gate/source/activityLiverIE/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverIE/dump 1 
+
+/gate/source/activityLiverIE/attachTo patient
+
+/gate/source/activityLiverIE/setForcedUnstableFlag true
+/gate/source/activityLiverIE/setForcedHalfLife 581472. s
+/gate/source/activityLiverIE/gps/particle gamma 
+/gate/source/activityLiverIE/gps/energytype UserSpectrum
+/gate/source/activityLiverIE/gps/setSpectrumFile ../data/Lu-177_IE.txt
+/gate/source/activityLiverIE/setIntensity 1.548E-01
+/gate/source/activityLiverIE/gps/angtype iso
+
+#######################################
+#######  L I V E R - Auger e- #########
+#######################################
+
+/gate/source/addSource activityLiverAE voxel
+/gate/source/activityLiverAE/reader/insert image
+/gate/source/activityLiverAE/imageReader/translator/insert linear
+/gate/source/activityLiverAE/imageReader/linearTranslator/setScale {liverActivity} MBq
+/gate/source/activityLiverAE/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverAE/imageReader/verbose  1
+/gate/source/activityLiverAE/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverAE/dump 1 
+
+/gate/source/activityLiverAE/attachTo patient
+
+/gate/source/activityLiverAE/setForcedUnstableFlag true
+/gate/source/activityLiverAE/setForcedHalfLife 581472. s
+/gate/source/activityLiverAE/gps/particle gamma 
+/gate/source/activityLiverAE/gps/energytype UserSpectrum
+/gate/source/activityLiverAE/gps/setSpectrumFile ../data/Lu-177_AE.txt
+/gate/source/activityLiverAE/setIntensity 1.117E+00
+/gate/source/activityLiverAE/gps/angtype iso		

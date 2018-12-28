@@ -1,0 +1,26 @@
+#=====================================================
+# P A T I E N T  S O U R C E - 346844 voxels
+#=====================================================
+
+###############################
+#######  L I V E R - beta #####
+###############################
+
+/gate/source/addSource activityLiverBminus voxel
+/gate/source/activityLiverBminus/reader/insert image
+/gate/source/activityLiverBminus/imageReader/translator/insert linear
+/gate/source/activityLiverBminus/imageReader/linearTranslator/setScale 1 MBq   #{liverActivity} MBq
+/gate/source/activityLiverBminus/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverBminus/imageReader/verbose  1
+/gate/source/activityLiverBminus/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverBminus/dump 1 
+
+/gate/source/activityLiverBminus/attachTo patient
+
+/gate/source/activityLiverBminus/setForcedUnstableFlag true
+/gate/source/activityLiverBminus/setForcedHalfLife 581472. s
+/gate/source/activityLiverBminus/gps/particle gamma 
+/gate/source/activityLiverBminus/gps/energytype UserSpectrum
+/gate/source/activityLiverBminus/gps/setSpectrumFile ../data/Lu-177_Bminus_modified.txt
+/gate/source/activityLiverBminus/setIntensity 1.000E+00
+/gate/source/activityLiverBminus/gps/angtype iso 

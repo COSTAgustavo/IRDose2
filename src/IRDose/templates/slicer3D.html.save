@@ -1,0 +1,30 @@
+{% extends "base.html" %}  
+{% block head_title %}Slicer3D || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+   <h1>How to create source and target organs with Slicer3D<br><small>Courtesy of Jonathan Tranel</small></h1>
+<ul>
+    <li>On up-left corner click over "DCM" > import > load.</li>
+    <li>In "Modules" select "Segment Editor" -> "Add segment".</li>
+    <li>On "Effects", select "Draw".</li>
+    <li>Draw the desired region and press Enter to add. It is also possible to erase mistakes by selecting the "Erase" brush.</li>
+    <li>Repeat the previous action over all slices that contains the desired volume/organ.</li>
+    <li>Once the whole organ is covered, click on "Create surface".</li>
+    <li>On "Modules" select "Segmentations" -> "add label map" -> "Copy/mmove segement +>"</li>
+    <li>On "Modules" select "Mask Scalar Volume"</li><br>
+        Input Volume: the DICOM file <br>
+        Mask volume: the created volume <br>
+        Masked volume: "Create new as"  -> Name your volume. <br>
+        Label value: 1<br>
+        Replace value : 0 <br>
+        Click on "Apply" <br>
+     <br> <li>On "Modules" select "Subject hierarchy"</li><br>
+        Right click on "Scene" -> "Create new subject" <br>
+        Right click on "New subject" -> "Create new child study" <br>
+        Glide the volume created at 8.1 to "New Study"<br>
+        Right click on "New subject" -> "Export to DICOM..." -> Choose the destination folder <br>
+    <br><li>Voilà !!</li>
+</ul>
+{% endblock content %}
+
+

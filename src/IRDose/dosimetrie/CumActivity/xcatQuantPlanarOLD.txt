@@ -1,0 +1,4 @@
+Cumulated Activities
+Kidneys = 1.76120441676e+13 MBq.h
+Liver =  1.47399643712e+13 MBq.h
+Spleen =  1.41281788455e+13 MBq.h

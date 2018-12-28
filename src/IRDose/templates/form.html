@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+<title>{% block head_title %} {{ title }} | {{ block.super }}IRDose{% endblock head_title %}</title>
+
+{% block content %}
+<h1>{{ title }}</h1>
+{% if form.errors.non_field_errors %}
+   {{ form.errors.non_field_errors }}
+{% endif %}
+<form enctype='multipart/form-data' method='post'> {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Save</button>
+
+</form>
+
+{% endblock %}
+
+
+   <!--  <input type='text' name='O_1' placeholder="Organ or compartment"><br/>
+    <input type='text' name='name' placeholder="Name"><br/>
+    <input type='text' name='t_1' placeholder="First time">
+    <input type='text' name='A_1' placeholder="First activity"><br/>
+    <input type='text' name='t_2' placeholder="Second time">
+    <input type='text' name='A_2' placeholder="Second activity"><br/>
+    <input type='text' name='t_3' placeholder="Third time">
+    <input type='text' name='A_3' placeholder="Third activity"><br/>
+    <input type='text' name='t_4' placeholder="Fourth time">
+    <input type='text' name='A_4' placeholder="Fourth activity"><br/> -->

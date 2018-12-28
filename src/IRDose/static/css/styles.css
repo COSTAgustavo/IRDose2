@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #000;
+    border-top: 1px solid #1ce;
+    padding: 200em 0;
+}
+
+.navbar .navbar-brand {
+    font-size: 8.8em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-left {
+    float: right;
+}
+
+
+.navbar .navbar-left li{
+    display: inline-block;
+    list-style: none;
+    margin-top: 0.em;
+    margin-right: 0.8em;
+}
+
+.navbar .navbar-left li:last-child {
+    margin-right: 1.0em;
+}
+
+.navbar .navbar-left li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-left li a:hover {
+    color: #1ce;
+}

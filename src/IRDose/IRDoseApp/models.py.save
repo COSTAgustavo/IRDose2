@@ -1,0 +1,37 @@
+from django.db import models
+from django.db.models.signals import pre_save, post_save
+
+from .utils import unique_slug_generator
+# Create your models here.
+class CumActivity(models.Model):
+   O_1 = models.CharField(max_length=30, blank=True)
+   t_1 = models.FloatField(default=0.0)
+   A_1 = models.FloatField(default=0.0)
+   t_2 = models.FloatField(default=0.0)
+   A_2 = models.FloatField(default=0.0)
+   t_3 = models.FloatField(default=0.0)
+   A_3 = models.FloatField(default=0.0)
+   t_4 = models.FloatField(default=0.0)
+   A_4 = models.FloatField(default=0.0)
+   name = models.CharField(max_length=120)
+#   location = models.CharField(max_length=120, null=True, blank=True)
+#   category = models.CharField(max_length=120, null=True, blank=True)
+   timeStamp= models.DateTimeField(auto_now_add=True)
+   updated = models.DateTimeField(auto_now=True) 
+   slug = models.SlugField(null=True, blank=True)
+
+   #myDateField = models.DateTimeField(auto_now=False, auto_now_add=False) 
+
+   def __str__(self):
+       return self.name
+
+   @property
+   def title(self):
+      return self.name
+
+
+def rl_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+       instance.slug = unique_slug_generator(instance)
+
+pre_save.connect(rl_pre_save_receiver, sender=CumActivity)

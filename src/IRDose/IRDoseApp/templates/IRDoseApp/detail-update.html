@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+<title>{% block head_title %}IRDoseApp | {{ block.super }}IRDose{% endblock head_title %}</title>
+
+{% block content%}
+<h1>{{ form.instance.title}} <small>{{ object.Organ }}</small></h1>
+<p>Created: {{ object.timeStamp}} | Updated {{ object.updated|timesince }} ago.</p>
+
+<!--  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d$">
+       <table class="pure-table pure-table-bordered">
+       <thead>
+           <tr>
+               <th>Time</th>
+               <th>Activity</th>
+           </tr>
+       </thead>
+
+       <tbody>
+           <tr class="pure-table-odd">
+               <td>{{ object.t_1 }}</td>
+               <td>{{ object.A_1 }}</td>
+           </tr>
+
+           <tr>
+               <td>{{ object.t_2 }}</td>
+               <td>{{ object.A_2 }}</td>
+           </tr>
+
+           <tr class="pure-table-odd">
+               <td>{{ object.t_3 }}</td>
+               <td>{{ object.A_3 }}</td>
+           </tr>
+           <tr>
+               <td>{{ object.t_4 }}</td>
+               <td>{{ object.A_4 }}</td>
+           </tr>
+        </tbody>
+       </table>
+       <p>Cumulated activity = {{ CA }}</p>
+       <p>Absorbed dose = {{ doseA }}</p>   -->
+
+       <form enctype="multipart/form-data" method='POST'> {% csrf_token %}
+           {{ form.as_p }}
+           <button type='submit'>Save</button>
+       </form>
+
+{% endblock content%}

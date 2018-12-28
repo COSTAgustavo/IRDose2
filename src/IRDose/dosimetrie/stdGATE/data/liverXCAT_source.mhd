@@ -1,0 +1,13 @@
+ObjectType = Image
+NDims = 1
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1
+Offset = 0
+CenterOfRotation = 0
+ElementSpacing = 1
+DimSize = 1
+AnatomicalOrientation = ?
+ElementType = MET_SHORT
+ElementDataFile = liverXCAT_source.raw

@@ -1,0 +1,16 @@
+  {% extends "base.html" %}
+
+{% block content %}
+{% if not user.is_authenticated %}
+<form method="post" action="{% url 'register' %}">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="register" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+{% else %}
+<p> You're already logged </p>
+{% endif %}
+{# Assumes you setup the password_reset view in your URLconf #}
+
+{% endblock %}

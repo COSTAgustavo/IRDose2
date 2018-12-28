@@ -1,0 +1,58 @@
+#=====================================================
+# V O X E L   S O U R C E
+#=====================================================
+
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	# DECLARATION OF THE FACT THAT A VOXELIZED SOURCE WILL BE USED 	*
+	#      Always use the keyword voxel to declare the type 		*
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+/gate/source/addSource ActivityImage voxel
+
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+	#  DECLARATION THAT THE VOXELIZED SOURCE WILL BE ENTERED USING IMAGE DATA 	*
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+/gate/source/ActivityImage/reader/insert image
+
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	# TRANSLATOR THAT WILL CONVERT THE IMAGE FROM DIGITAL VALUES TO ACTIVITY VALUES 	*
+	#   Linear translator: this scales all image values directly into activities		*
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+/gate/source/ActivityImage/imageReader/translator/insert linear
+/gate/source/ActivityImage/imageReader/linearTranslator/setScale {sphereActivity} MBq
+
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+	#  INSERT THE IMAGE DATA USING THE APPROPRIATE EXTENSION FILE 	*
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+#/gate/source/ActivityImage/imageReader/readFile ../data/{CHANGECOMPARTMENT}.mhd
+/gate/source/ActivityImage/imageReader/readFile ../data/kidneys.mhd
+/gate/source/ActivityImage/imageReader/verbose  1
+
+
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	# THE DEFAULT POSITION OF THE VOXELIZED SOURCE IS IN THE 1ST QUARTER 	*
+	# 			Voxelized source has to be shifted over half its 			*
+	#			dimension in the negative direction on each axis  			*			
+	# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+/gate/source/ActivityImage/setPosition  -131.25 -325. -856.5625 mm		#573 coupes
+#/gate/source/ActivityImage/setPosition  -334.375 -143.75 -209.375 mm			#134 coupes
+/gate/source/ActivityImage/dump 1 
+
+/gate/source/ActivityImage/attachTo patient
+
+/gate/source/ActivityImage/setForcedUnstableFlag true
+/gate/source/ActivityImage/setForcedHalfLife 581472. s
+/gate/source/ActivityImage/gps/particle gamma 
+#/gate/source/ActivityImage/gps/energytype Mono 
+#/gate/source/ActivityImage/gps/monoenergy 208. keV 
+/gate/source/ActivityImage/gps/energytype UserSpectrum
+/gate/source/ActivityImage/gps/setSpectrumFile ../data/DiscreteSpectrumLu.txt
+/gate/source/ActivityImage/gps/angtype iso 
+/gate/source/ActivityImage/gps/mintheta 0. deg 
+/gate/source/ActivityImage/gps/maxtheta 180. deg 
+/gate/source/ActivityImage/gps/minphi 0. deg 
+/gate/source/ActivityImage/gps/maxphi 360. deg

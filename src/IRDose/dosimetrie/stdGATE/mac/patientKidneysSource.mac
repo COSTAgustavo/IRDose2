@@ -1,0 +1,118 @@
+#=====================================================
+# P A T I E N T  S O U R C E - 56078 voxels
+#=====================================================
+
+###################################
+#######  K I D N E Y S - beta #####
+###################################
+
+/gate/source/addSource activityKidneysBminus voxel
+/gate/source/activityKidneysBminus/reader/insert image
+/gate/source/activityKidneysBminus/imageReader/translator/insert linear
+/gate/source/activityKidneysBminus/imageReader/linearTranslator/setScale 1 MBq   #{kidneysActivity} MBq
+/gate/source/activityKidneysBminus/imageReader/readFile ../data/cropedKidneys.mhd
+/gate/source/activityKidneysBminus/imageReader/verbose  1
+/gate/source/activityKidneysBminus/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityKidneysBminus/dump 1 
+
+/gate/source/activityKidneysBminus/attachTo patient
+
+/gate/source/activityKidneysBminus/setForcedUnstableFlag true
+/gate/source/activityKidneysBminus/setForcedHalfLife 581472. s
+/gate/source/activityKidneysBminus/gps/particle gamma 
+/gate/source/activityKidneysBminus/gps/energytype UserSpectrum
+/gate/source/activityKidneysBminus/gps/setSpectrumFile ../data/Lu-177_Bminus_modified.txt
+/gate/source/activityKidneysBminus/setIntensity 1.000E+00
+/gate/source/activityKidneysBminus/gps/angtype iso 
+
+####################################
+#######  K I D N E Y S - gamma #####
+####################################
+
+/gate/source/addSource activityKidneysGamma voxel
+/gate/source/activityKidneysGamma/reader/insert image
+/gate/source/activityKidneysGamma/imageReader/translator/insert linear
+/gate/source/activityKidneysGamma/imageReader/linearTranslator/setScale 1 MBq   #{kidneysActivity} MBq
+/gate/source/activityKidneysGamma/imageReader/readFile ../data/cropedKidneys.mhd
+/gate/source/activityKidneysGamma/imageReader/verbose  1
+/gate/source/activityKidneysGamma/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityKidneysGamma/dump 1 
+
+/gate/source/activityKidneysGamma/attachTo patient
+
+/gate/source/activityKidneysGamma/setForcedUnstableFlag true
+/gate/source/activityKidneysGamma/setForcedHalfLife 581472. s
+/gate/source/activityKidneysGamma/gps/particle gamma 
+/gate/source/activityKidneysGamma/gps/energytype UserSpectrum
+/gate/source/activityKidneysGamma/gps/setSpectrumFile ../data/Lu-177_G.txt
+/gate/source/activityKidneysGamma/setIntensity 1.803E-01
+/gate/source/activityKidneysGamma/gps/angtype iso 
+
+####################################
+#######  K I D N E Y S - X #########
+####################################
+
+/gate/source/addSource activityKidneysX voxel
+/gate/source/activityKidneysX/reader/insert image
+/gate/source/activityKidneysX/imageReader/translator/insert linear
+/gate/source/activityKidneysX/imageReader/linearTranslator/setScale 1 MBq   #{kidneysActivity} MBq
+/gate/source/activityKidneysX/imageReader/readFile ../data/cropedKidneys.mhd
+/gate/source/activityKidneysX/imageReader/verbose  1
+/gate/source/activityKidneysX/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityKidneysX/dump 1 
+
+/gate/source/activityKidneysX/attachTo patient
+
+/gate/source/activityKidneysX/setForcedUnstableFlag true
+/gate/source/activityKidneysX/setForcedHalfLife 581472. s
+/gate/source/activityKidneysX/gps/particle gamma 
+/gate/source/activityKidneysX/gps/energytype UserSpectrum
+/gate/source/activityKidneysX/gps/setSpectrumFile ../data/Lu-177_X.txt
+/gate/source/activityKidneysX/setIntensity 1.374E+00
+/gate/source/activityKidneysX/gps/angtype iso 
+
+###########################################
+#######  K I D N E Y S - Int. Conv e- #####
+###########################################
+
+/gate/source/addSource activityKidneysIE voxel
+/gate/source/activityKidneysIE/reader/insert image
+/gate/source/activityKidneysIE/imageReader/translator/insert linear
+/gate/source/activityKidneysIE/imageReader/linearTranslator/setScale 1 MBq   #{kidneysActivity} MBq
+/gate/source/activityKidneysIE/imageReader/readFile ../data/cropedKidneys.mhd
+/gate/source/activityKidneysIE/imageReader/verbose  1
+/gate/source/activityKidneysIE/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityKidneysIE/dump 1 
+
+/gate/source/activityKidneysIE/attachTo patient
+
+/gate/source/activityKidneysIE/setForcedUnstableFlag true
+/gate/source/activityKidneysIE/setForcedHalfLife 581472. s
+/gate/source/activityKidneysIE/gps/particle gamma 
+/gate/source/activityKidneysIE/gps/energytype UserSpectrum
+/gate/source/activityKidneysIE/gps/setSpectrumFile ../data/Lu-177_IE.txt
+/gate/source/activityKidneysIE/setIntensity 1.548E-01
+/gate/source/activityKidneysIE/gps/angtype iso
+
+###########################################
+#######  K I D N E Y S - Auger e- #########
+###########################################
+
+/gate/source/addSource activityKidneysAE voxel
+/gate/source/activityKidneysAE/reader/insert image
+/gate/source/activityKidneysAE/imageReader/translator/insert linear
+/gate/source/activityKidneysAE/imageReader/linearTranslator/setScale 1 MBq   #{kidneysActivity} MBq
+/gate/source/activityKidneysAE/imageReader/readFile ../data/cropedKidneys.mhd
+/gate/source/activityKidneysAE/imageReader/verbose  1
+/gate/source/activityKidneysAE/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityKidneysAE/dump 1 
+
+/gate/source/activityKidneysAE/attachTo patient
+
+/gate/source/activityKidneysAE/setForcedUnstableFlag true
+/gate/source/activityKidneysAE/setForcedHalfLife 581472. s
+/gate/source/activityKidneysAE/gps/particle gamma 
+/gate/source/activityKidneysAE/gps/energytype UserSpectrum
+/gate/source/activityKidneysAE/gps/setSpectrumFile ../data/Lu-177_AE.txt
+/gate/source/activityKidneysAE/setIntensity 1.117E+00
+/gate/source/activityKidneysAE/gps/angtype iso		

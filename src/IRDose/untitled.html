@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Teste</title>
+
+    <script
+
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+
+crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <div class="sometext">
+
+      <h3>Hello Ma'am</h3>
+
+      <form class="sneze"  method="post">
+
+        <input type="text" name="" value="Hello">
+
+        <button id='clickme'  name="button">Press</button>
+
+ 
+
+      </form>
+
+    </div>
+
+    <div id="imhidden">
+
+      <h1>Simulating</h1>
+
+      <div style="width:100%;height:0;padding-bottom:66%;position:relative;"><iframe src="https://giphy.com/embed/tXL4FHPSnVJ0A" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+    <script>
+
+    $('#imhidden').hide();
+
+    // Atrasar o submit
+
+    $('form').submit( function(event) {
+
+    var formId = this.id,
+
+        form = this;
+
+ 
+
+    event.preventDefault();
+
+ 
+
+    setTimeout( function () {
+
+        form.submit();
+
+    }, 5000);
+
+});
+
+ 
+
+    $('#clickme').click(function(){$('.sometext').hide(); $('#imhidden').show();})
+
+    </script>
+
+  </body>
+
+</html>

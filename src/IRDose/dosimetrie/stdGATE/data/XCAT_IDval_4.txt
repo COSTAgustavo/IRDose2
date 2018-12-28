@@ -1,0 +1,15 @@
+-1.0 0.5 Vacuum
+359.4 359.6 Lung
+1201.3 1201.5 Brain
+1219.6 1219.8 Intestine
+1220.2 1220.4 Muscle
+1222.7 1222.9 Heart
+1228.2 1228.4 Kidney
+1234.0 1234.2 Liver
+1254.2 1254.4 Spleen
+1260.5 1260.7 Blood
+1273.8 1274.0 Body
+1300.2 1300.4 Cartilage
+1410.6 1410.8 SpineBone
+1547.3 1547.5 Skull
+1770.9 1772. RibBone

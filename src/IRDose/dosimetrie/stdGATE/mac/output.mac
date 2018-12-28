@@ -1,0 +1,21 @@
+/gate/actor/addActor                       DoseActor  doseDist
+/gate/actor/doseDist/save                  ../output/{tissue}/{testNumber}.mhd
+
+### For voxel versus analytic phantoms
+#/gate/actor/doseDist/attachTo              JSPECTP
+
+### For dosimetry aplications
+/gate/actor/doseDist/attachTo              patient
+
+/gate/actor/doseDist/stepHitType           random
+#/gate/actor/doseDist/setSize 274.41 356.45 405 mm
+/gate/actor/doseDist/setResolution {resolution_x} {resolution_y} {resolution_z}
+/gate/actor/doseDist/setVoxelSize {pixel_x} {pixel_y} {pixel_z} mm
+#/gate/actor/doseDist/setResolution 365 281 108
+#/gate/actor/doseDist/setVoxelSize 0.976562 0.976562 3.75 mm
+/gate/actor/doseDist/enableEdep            false
+/gate/actor/doseDist/enableUncertaintyEdep false
+/gate/actor/doseDist/enableDose            true
+/gate/actor/doseDist/enableSquaredDose     true
+/gate/actor/doseDist/enableUncertaintyDose true
+/gate/actor/doseDist/enableNumberOfHits    false

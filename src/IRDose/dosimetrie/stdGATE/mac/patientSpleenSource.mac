@@ -1,0 +1,118 @@
+#=====================================================
+# P A T I E N T  S O U R C  - 21408 voxels
+#=====================================================
+
+#################################
+#######  S P L E E N - beta #####
+#################################
+
+/gate/source/addSource activitySpleenBminus voxel
+/gate/source/activitySpleenBminus/reader/insert image
+/gate/source/activitySpleenBminus/imageReader/translator/insert linear
+/gate/source/activitySpleenBminus/imageReader/linearTranslator/setScale {spleenActivity} MBq
+/gate/source/activitySpleenBminus/imageReader/readFile ../data/cropedSpleen.mhd
+/gate/source/activitySpleenBminus/imageReader/verbose  1
+/gate/source/activitySpleenBminus/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activitySpleenBminus/dump 1 
+
+/gate/source/activitySpleenBminus/attachTo patient
+
+/gate/source/activitySpleenBminus/setForcedUnstableFlag true
+/gate/source/activitySpleenBminus/setForcedHalfLife 581472. s
+/gate/source/activitySpleenBminus/gps/particle gamma 
+/gate/source/activitySpleenBminus/gps/energytype UserSpectrum
+/gate/source/activitySpleenBminus/gps/setSpectrumFile ../data/Lu-177_Bminus_modified.txt
+/gate/source/activitySpleenBminus/setIntensity 1.000E+00
+/gate/source/activitySpleenBminus/gps/angtype iso 
+
+##################################
+#######  S P L E E N - gamma #####
+##################################
+
+/gate/source/addSource activitySpleenGamma voxel
+/gate/source/activitySpleenGamma/reader/insert image
+/gate/source/activitySpleenGamma/imageReader/translator/insert linear
+/gate/source/activitySpleenGamma/imageReader/linearTranslator/setScale {spleenActivity} MBq
+/gate/source/activitySpleenGamma/imageReader/readFile ../data/cropedSpleen.mhd
+/gate/source/activitySpleenGamma/imageReader/verbose  1
+/gate/source/activitySpleenGamma/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activitySpleenGamma/dump 1 
+
+/gate/source/activitySpleenGamma/attachTo patient
+
+/gate/source/activitySpleenGamma/setForcedUnstableFlag true
+/gate/source/activitySpleenGamma/setForcedHalfLife 581472. s
+/gate/source/activitySpleenGamma/gps/particle gamma 
+/gate/source/activitySpleenGamma/gps/energytype UserSpectrum
+/gate/source/activitySpleenGamma/gps/setSpectrumFile ../data/Lu-177_G.txt
+/gate/source/activitySpleenGamma/setIntensity 1.803E-01
+/gate/source/activitySpleenGamma/gps/angtype iso 
+
+##################################
+#######  S P L E E N - X #########
+##################################
+
+/gate/source/addSource activitySpleenX voxel
+/gate/source/activitySpleenX/reader/insert image
+/gate/source/activitySpleenX/imageReader/translator/insert linear
+/gate/source/activitySpleenX/imageReader/linearTranslator/setScale {spleenActivity} MBq
+/gate/source/activitySpleenX/imageReader/readFile ../data/cropedSpleen.mhd
+/gate/source/activitySpleenX/imageReader/verbose  1
+/gate/source/activitySpleenX/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activitySpleenX/dump 1 
+
+/gate/source/activitySpleenX/attachTo patient
+
+/gate/source/activitySpleenX/setForcedUnstableFlag true
+/gate/source/activitySpleenX/setForcedHalfLife 581472. s
+/gate/source/activitySpleenX/gps/particle gamma 
+/gate/source/activitySpleenX/gps/energytype UserSpectrum
+/gate/source/activitySpleenX/gps/setSpectrumFile ../data/Lu-177_X.txt
+/gate/source/activitySpleenX/setIntensity 1.374E+00
+/gate/source/activitySpleenX/gps/angtype iso 
+
+#########################################
+#######  S P L E E N - Int. Conv e- #####
+#########################################
+
+/gate/source/addSource activitySpleenIE voxel
+/gate/source/activitySpleenIE/reader/insert image
+/gate/source/activitySpleenIE/imageReader/translator/insert linear
+/gate/source/activitySpleenIE/imageReader/linearTranslator/setScale {spleenActivity} MBq
+/gate/source/activitySpleenIE/imageReader/readFile ../data/cropedSpleen.mhd
+/gate/source/activitySpleenIE/imageReader/verbose  1
+/gate/source/activitySpleenIE/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activitySpleenIE/dump 1 
+
+/gate/source/activitySpleenIE/attachTo patient
+
+/gate/source/activitySpleenIE/setForcedUnstableFlag true
+/gate/source/activitySpleenIE/setForcedHalfLife 581472. s
+/gate/source/activitySpleenIE/gps/particle gamma 
+/gate/source/activitySpleenIE/gps/energytype UserSpectrum
+/gate/source/activitySpleenIE/gps/setSpectrumFile ../data/Lu-177_IE.txt
+/gate/source/activitySpleenIE/setIntensity 1.548E-01
+/gate/source/activitySpleenIE/gps/angtype iso
+
+#########################################
+#######  S P L E E N - Auger e- #########
+#########################################
+
+/gate/source/addSource activitySpleenAE voxel
+/gate/source/activitySpleenAE/reader/insert image
+/gate/source/activitySpleenAE/imageReader/translator/insert linear
+/gate/source/activitySpleenAE/imageReader/linearTranslator/setScale {spleenActivity} MBq
+/gate/source/activitySpleenAE/imageReader/readFile ../data/cropedSpleen.mhd
+/gate/source/activitySpleenAE/imageReader/verbose  1
+/gate/source/activitySpleenAE/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activitySpleenAE/dump 1 
+
+/gate/source/activitySpleenAE/attachTo patient
+
+/gate/source/activitySpleenAE/setForcedUnstableFlag true
+/gate/source/activitySpleenAE/setForcedHalfLife 581472. s
+/gate/source/activitySpleenAE/gps/particle gamma 
+/gate/source/activitySpleenAE/gps/energytype UserSpectrum
+/gate/source/activitySpleenAE/gps/setSpectrumFile ../data/Lu-177_AE.txt
+/gate/source/activitySpleenAE/setIntensity 1.117E+00
+/gate/source/activitySpleenAE/gps/angtype iso		

@@ -1,0 +1,127 @@
+#=====================================================
+# V I S U A L I S A T I O N
+#=====================================================
+#Liver 305 537.28 MBq.h           -> 0.9479
+#Spleen 5097.94 MBq.h             -> 0.0158
+#Kidneys 5719.473 + 5982.03 MBq.h -> 0.0363
+
+
+
+/vis/disable
+#/control/execute vis.mac
+
+#=====================================================
+# D A T A B A S E   GATE
+#=====================================================
+# For analitic and voxel images
+#/gate/geometry/setMaterialDatabase ../data/GateMaterialsXCAT.db
+
+# For CT images
+/gate/geometry/setMaterialDatabase ../data/patient-HUmaterials.db
+
+#=====================================================
+# G E O M E T R Y
+#=====================================================
+
+#### W o r l d 
+/gate/world/setMaterial	Air
+/gate/world/geometry/setXLength 200 cm
+/gate/world/geometry/setYLength 200 cm
+/gate/world/geometry/setZLength 400 cm
+
+
+#=====================================================
+# P H I S I Q U E
+#=====================================================
+
+### 4 Differents choix
+
+#/control/execute Physicslist_HAD_std.mac
+#/control/execute Physicslist_EM_penelope.mac
+/control/execute Physicslist_EM_Livermore.mac
+#/control/execute Physicslist_EM_std.mac
+
+
+#=====================================================
+# P A T I E N T
+#=====================================================
+
+# for dosimetry
+/control/execute patient.mac
+
+
+#=====================================================
+# O U T P U T
+#=====================================================
+
+/control/execute output.mac
+
+#=====================================================
+# I N I T I A L I Z A T I O N
+#=====================================================
+
+/gate/run/initialize
+#/control/execute MoveVisu.mac
+
+#=====================================================
+# S O U R C E
+#=====================================================
+
+#### For dosimetry
+/control/execute patientMultiSource.mac
+
+#=====================================================
+#   R A N D O M
+#=====================================================
+
+# JamesRandom Ranlux64 MersenneTwister
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed 2345678
+#/gate/random/setEngineSeed {testNumber}0
+
+#/gate/random/resetEngineFrom fileName
+/gate/random/verbose 1
+
+#=====================================================
+# P R O J E C T I O N
+#=====================================================
+
+#/control/execute projection.mac
+#/control/execute tomoProjection.mac
+
+#/gate/output/root/enable
+#/gate/output/root/setFileName ../output/{testNumber}
+
+#=====================================================
+# E X P E R I M E N T 
+#=====================================================
+
+/gate/application/setTimeSlice      1. s
+/gate/application/setTimeStart      0. s
+/gate/application/setTimeStop      1. s
+
+#/gate/application/setTimeSlice      30.  s
+#/gate/application/setTimeStart      0.  s
+#/gate/application/setTimeStop      1800.  s
+
+
+### F o r   P o i n t    S o u r c e
+#/gate/application/setTimeSlice    1. s
+#/gate/application/setTimeStart     0.  s
+#/gate/application/setTimeStop     1. s
+
+#=====================================================
+# V E R B O S I T Y
+#=====================================================
+
+/control/execute ../data/Verbose.mac
+
+### A c q u i s i t i o n   F o r   P o i n t    S o u r c e (Tc-99m)
+/gate/application/setTotalNumberOfPrimaries {nPrimaries}e5
+#/gate/application/setTotalNumberOfPrimaries 3.83e7  # 3.83 -> 1 disintegration of Lu-177 (1 Bq)
+
+#/gate/application/noGlobalOutput
+
+#/gate/application/start
+/gate/application/startDAQ
+/gate/application/describe

@@ -1,0 +1,22 @@
+#######################################
+#######  L I V E R - Auger e- #########
+#######################################
+
+/gate/source/addSource activityLiverAE voxel
+/gate/source/activityLiverAE/reader/insert image
+/gate/source/activityLiverAE/imageReader/translator/insert linear
+/gate/source/activityLiverAE/imageReader/linearTranslator/setScale 1 MBq   #{liverActivity} MBq
+/gate/source/activityLiverAE/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverAE/imageReader/verbose  1
+/gate/source/activityLiverAE/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverAE/dump 1 
+
+/gate/source/activityLiverAE/attachTo patient
+
+/gate/source/activityLiverAE/setForcedUnstableFlag true
+/gate/source/activityLiverAE/setForcedHalfLife 581472. s
+/gate/source/activityLiverAE/gps/particle gamma 
+/gate/source/activityLiverAE/gps/energytype UserSpectrum
+/gate/source/activityLiverAE/gps/setSpectrumFile ../data/Lu-177_AE.txt
+/gate/source/activityLiverAE/setIntensity 1.117E+00
+/gate/source/activityLiverAE/gps/angtype iso		

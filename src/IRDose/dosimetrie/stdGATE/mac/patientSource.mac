@@ -1,0 +1,79 @@
+#=====================================================
+# P A T I E N T  S O U R C E
+#=====================================================
+
+#######  L I V E R
+/gate/source/addSource activityLiver voxel
+/gate/source/activityLiver/reader/insert image
+/gate/source/activityLiver/imageReader/translator/insert linear
+/gate/source/activityLiver/imageReader/linearTranslator/setScale {liverActivity} MBq
+/gate/source/activityLiver/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiver/imageReader/verbose  1
+/gate/source/activityLiver/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiver/dump 1 
+
+/gate/source/activityLiver/attachTo patient
+
+/gate/source/activityLiver/setForcedUnstableFlag true
+/gate/source/activityLiver/setForcedHalfLife 581472. s
+/gate/source/activityLiver/gps/particle gamma 
+#/gate/source/activityLiver/gps/energytype Mono 
+#/gate/source/activityLiver/gps/monoenergy 208. keV 
+/gate/source/activityLiver/gps/energytype UserSpectrum
+/gate/source/activityLiver/gps/setSpectrumFile ../data/DiscreteSpectrumLu.txt
+/gate/source/activityLiver/gps/angtype iso 
+#/gate/source/activityLiver/gps/mintheta 0. deg 
+#/gate/source/activityLiver/gps/maxtheta 180. deg 
+#/gate/source/activityLiver/gps/minphi 0. deg 
+#/gate/source/activityLiver/gps/maxphi 360. deg
+
+
+######## K I D N E Y S
+/gate/source/addSource activityKidneys voxel
+/gate/source/activityKidneys/reader/insert image
+/gate/source/activityKidneys/imageReader/translator/insert linear
+/gate/source/activityKidneys/imageReader/linearTranslator/setScale {kidneysActivity} MBq
+/gate/source/activityKidneys/imageReader/readFile ../data/cropedKidneys.mhd
+/gate/source/activityKidneys/imageReader/verbose  1
+/gate/source/activityKidneys/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityKidneys/dump 1 
+
+/gate/source/activityKidneys/attachTo patient
+
+/gate/source/activityKidneys/setForcedUnstableFlag true
+/gate/source/activityKidneys/setForcedHalfLife 581472. s
+/gate/source/activityKidneys/gps/particle gamma 
+#/gate/source/activityKidneys/gps/energytype Mono 
+#/gate/source/activityKidneys/gps/monoenergy 208. keV 
+/gate/source/activityKidneys/gps/energytype UserSpectrum
+/gate/source/activityKidneys/gps/setSpectrumFile ../data/DiscreteSpectrumLu.txt
+/gate/source/activityKidneys/gps/angtype iso 
+#/gate/source/activityKidneys/gps/mintheta 0. deg 
+#/gate/source/activityKidneys/gps/maxtheta 180. deg 
+#/gate/source/activityKidneys/gps/minphi 0. deg 
+#/gate/source/activityKidneys/gps/maxphi 360. deg
+
+####### S P L E E N
+/gate/source/addSource activitySpleen voxel
+/gate/source/activitySpleen/reader/insert image
+/gate/source/activitySpleen/imageReader/translator/insert linear
+/gate/source/activitySpleen/imageReader/linearTranslator/setScale {spleenActivity} MBq
+/gate/source/activitySpleen/imageReader/readFile ../data/cropedSpleen.mhd
+/gate/source/activitySpleen/imageReader/verbose  1
+/gate/source/activitySpleen/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activitySpleen/dump 1 
+
+/gate/source/activitySpleen/attachTo patient
+
+/gate/source/activitySpleen/setForcedUnstableFlag true
+/gate/source/activitySpleen/setForcedHalfLife 581472. s
+/gate/source/activitySpleen/gps/particle gamma 
+#/gate/source/activitySpleen/gps/energytype Mono 
+#/gate/source/activitySpleen/gps/monoenergy 208. keV 
+/gate/source/activitySpleen/gps/energytype UserSpectrum
+/gate/source/activitySpleen/gps/setSpectrumFile ../data/DiscreteSpectrumLu.txt
+/gate/source/activitySpleen/gps/angtype iso 
+#/gate/source/activitySpleen/gps/mintheta 0. deg 
+#/gate/source/activitySpleen/gps/maxtheta 180. deg 
+#/gate/source/activitySpleen/gps/minphi 0. deg 
+#/gate/source/activitySpleen/gps/maxphi 360. deg

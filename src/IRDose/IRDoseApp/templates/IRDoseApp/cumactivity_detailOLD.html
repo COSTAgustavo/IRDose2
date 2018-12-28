@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+<title>{% block head_title %}IRDoseApp | {{ block.super }}IRDose{% endblock head_title %}</title>
+
+{% block content%}
+<h1>{{ object.title}} <small>{{ object.category }}</small></h1>
+<h1>{{ object.title}} <small>{{ object.category }}</small></h1>
+<p>{{ object.location}}</p>
+<p>{{ object.timeStamp}}, updated {{ object.updated|timesince }} ago.</p>
+{% endblock content%}

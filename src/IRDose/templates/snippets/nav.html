@@ -1,0 +1,15 @@
+<div class='container'>
+   <img src="https://res.cloudinary.com/df4pelnzu/image/upload/v1533069109/IRDose_logo_black.png" width='289' height='105' /><br>
+   <a href='{% url "home" %}'>Home</a>
+{% if request.user.is_authenticated %}
+   <a href='{% url "IRDoseApp:create" %}'>Absorbed dose</a>
+   <a href='{% url "IRDoseApp:IRDoseApp" %}'>My jobs list</a>
+   <a href='{% url "logout" %}'>Log Out</a>
+{% endif %}
+   <a href='{% url "about" %}'>How it works</a>
+   <a href='{% url "contact" %}'>Contact</a>
+{% if not request.user.is_authenticated %}
+   <a href='{% url "login" %}'>Login</a>
+   <a href='{% url "register" %}'>Register</a>
+{% endif %}
+</div>

@@ -1,0 +1,116 @@
+<!doctype html>
+
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <title>IRDose | Cumulated Activity</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+   
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<h1> Cumulated Activity </h1>
+
+<body class="main">
+
+<div>
+
+    <p>Please enter the times of acquisition and the activity. </p>
+
+ <!--
+    <form class="pure-form" method="POST" action="/">
+       t(0):<br>
+       <input type="text" name="t_zero"><br>
+       A(0):<br>
+       <input type="text" name="A_zero"><br>
+       <button type="submit" class="pure-button pure-button-prymary" value="submit">Submit</button>
+    </form>
+ -->
+
+<form class="pure-form" method="POST" action="/cumulatedActivity">
+
+   <table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>Time (h)</th>
+            <th>Activity (GBq)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr class="pure-table-odd">
+            <td><br>
+            <input type="text" name="t_1"><br></td>
+            <td><br>
+            <input type="text" name="A_1"><br></td>
+        </tr>
+
+        <tr>
+            <td><br>
+            <input type="text" name="t_2"><br></td>
+            <td><br>
+            <input type="text" name="A_2"><br></td>
+        </tr>
+
+        <tr class="pure-table-odd">
+            <td><br>
+            <input type="text" name="t_3"><br></td>
+            <td><br>
+            <input type="text" name="A_3"><br></td>
+        </tr>
+        <tr>
+            <td><br>
+            <input type="text" name="t_4"><br></td>
+            <td><br>
+            <input type="text" name="A_4"><br></td>
+        </tr>
+     </tbody>
+    </table>
+    <button type="submit" class="pure-button pure-button-prymary" value="submit">Submit</button>
+    </form>
+
+
+
+    {% if A_4 %}
+       <table class="pure-table pure-table-bordered">
+       <thead>
+           <tr>
+               <th>Time</th>
+               <th>Activity</th>
+           </tr>
+       </thead>
+
+       <tbody>
+           <tr class="pure-table-odd">
+               <td>{{ t_1 }}</td>
+               <td>{{ A_1 }}</td>
+           </tr>
+
+           <tr>
+               <td>{{ t_2 }}</td>
+               <td>{{ A_2 }}</td>
+           </tr>
+
+           <tr class="pure-table-odd">
+               <td>{{ t_3 }}</td>
+               <td>{{ A_3 }}</td>
+           </tr>
+           <tr>
+               <td>{{ t_4 }}</td>
+               <td>{{ A_4 }}</td>
+           </tr>
+        </tbody>
+       </table>
+
+       {{ AC }}
+   {% endif %}
+</div>
+
+<div>
+</div>
+
+</body>
+
+
+{% endblock %}

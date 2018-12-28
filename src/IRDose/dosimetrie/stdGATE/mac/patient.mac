@@ -1,0 +1,17 @@
+#=====================================================
+# VOXEL PATIENT
+#=====================================================
+
+/gate/world/daughters/name patient
+/gate/world/daughters/insert ImageNestedParametrisedVolume
+
+/gate/patient/geometry/setHUToMaterialFile ../data/patient-HU2mat.txt
+#/gate/patient/geometry/setHUToMaterialFile ../data/XCAT_IDval_4.txt
+
+/gate/patient/geometry/setImage ../data/{tissue}.mhd
+/gate/patient/describe 1
+
+
+
+
+ 

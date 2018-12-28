@@ -1,0 +1,6 @@
+Cumulated Activities
+Right kidneys = 1.92711976742e+13 MBq.h
+Left kidney =  1.84495102806e+13 MBq.h
+ kidneys = 3.77207079547e+13 MBq.h
+Liver =  8.68010783453e+14 MBq.h
+Spleen =  1.5234486352e+13 MBq.h

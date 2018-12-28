@@ -1,0 +1,22 @@
+################################
+#######  L I V E R - X #########
+################################
+
+/gate/source/addSource activityLiverX voxel
+/gate/source/activityLiverX/reader/insert image
+/gate/source/activityLiverX/imageReader/translator/insert linear
+/gate/source/activityLiverX/imageReader/linearTranslator/setScale 1 MBq   #{liverActivity} MBq
+/gate/source/activityLiverX/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverX/imageReader/verbose  1
+/gate/source/activityLiverX/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverX/dump 1 
+
+/gate/source/activityLiverX/attachTo patient
+
+/gate/source/activityLiverX/setForcedUnstableFlag true
+/gate/source/activityLiverX/setForcedHalfLife 581472. s
+/gate/source/activityLiverX/gps/particle gamma 
+/gate/source/activityLiverX/gps/energytype UserSpectrum
+/gate/source/activityLiverX/gps/setSpectrumFile ../data/Lu-177_X.txt
+/gate/source/activityLiverX/setIntensity 1.374E+00
+/gate/source/activityLiverX/gps/angtype iso 

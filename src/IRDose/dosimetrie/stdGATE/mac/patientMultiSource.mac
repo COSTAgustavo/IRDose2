@@ -1,0 +1,28 @@
+#=====================================================
+# P A T I E N T  S O U R C E - 346844 voxels
+#=====================================================
+
+###############################
+#######  L I V E R - beta #####
+###############################
+
+/gate/source/addSource activityLiver{emissionType} voxel
+/gate/source/activityLiver{emissionType}/reader/insert image
+/gate/source/activityLiver{emissionType}/imageReader/translator/insert linear
+/gate/source/activityLiver{emissionType}/imageReader/linearTranslator/setScale 1 MBq   #{liverActivity} MBq
+/gate/source/activityLiver{emissionType}/imageReader/readFile ../data/{tissue}_source.mhd
+/gate/source/activityLiver{emissionType}/imageReader/verbose  1
+/gate/source/activityLiver{emissionType}/setPosition  -{sourceShift_x} -{sourceShift_y} -{sourceShift_z} mm
+/gate/source/activityLiver{emissionType}/dump 1 
+
+/gate/source/activityLiver{emissionType}/attachTo patient
+
+/gate/source/activityLiver{emissionType}/setForcedUnstableFlag true
+/gate/source/activityLiver{emissionType}/setForcedHalfLife 581472. s
+/gate/source/activityLiver{emissionType}/gps/particle {particule}
+/gate/source/activityLiver{emissionType}/gps/energytype UserSpectrum
+/gate/source/activityLiver{emissionType}/gps/setSpectrumFile ../data/Lu-177_{emissionType}.txt
+#/gate/source/activityLiver{emissionType}/setIntensity 1.000E+00
+/gate/source/activityLiver{emissionType}/gps/angtype iso 
+
+	

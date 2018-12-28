@@ -1,0 +1,22 @@
+################################
+#######  L I V E R - gamma #####
+################################
+
+/gate/source/addSource activityLiverGamma voxel
+/gate/source/activityLiverGamma/reader/insert image
+/gate/source/activityLiverGamma/imageReader/translator/insert linear
+/gate/source/activityLiverGamma/imageReader/linearTranslator/setScale 1 MBq   #{liverActivity} MBq
+/gate/source/activityLiverGamma/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverGamma/imageReader/verbose  1
+/gate/source/activityLiverGamma/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverGamma/dump 1 
+
+/gate/source/activityLiverGamma/attachTo patient
+
+/gate/source/activityLiverGamma/setForcedUnstableFlag true
+/gate/source/activityLiverGamma/setForcedHalfLife 581472. s
+/gate/source/activityLiverGamma/gps/particle gamma 
+/gate/source/activityLiverGamma/gps/energytype UserSpectrum
+/gate/source/activityLiverGamma/gps/setSpectrumFile ../data/Lu-177_G.txt
+/gate/source/activityLiverGamma/setIntensity 1.803E-01
+/gate/source/activityLiverGamma/gps/angtype iso 

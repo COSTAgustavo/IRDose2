@@ -1,0 +1,22 @@
+#######################################
+#######  L I V E R - Int. Conv e- #####
+#######################################
+
+/gate/source/addSource activityLiverIE voxel
+/gate/source/activityLiverIE/reader/insert image
+/gate/source/activityLiverIE/imageReader/translator/insert linear
+/gate/source/activityLiverIE/imageReader/linearTranslator/setScale 1 MBq   #{liverActivity} MBq
+/gate/source/activityLiverIE/imageReader/readFile ../data/cropedLiver.mhd
+/gate/source/activityLiverIE/imageReader/verbose  1
+/gate/source/activityLiverIE/setPosition  -201.66 -113.77 -202.5 mm
+/gate/source/activityLiverIE/dump 1 
+
+/gate/source/activityLiverIE/attachTo patient
+
+/gate/source/activityLiverIE/setForcedUnstableFlag true
+/gate/source/activityLiverIE/setForcedHalfLife 581472. s
+/gate/source/activityLiverIE/gps/particle gamma 
+/gate/source/activityLiverIE/gps/energytype UserSpectrum
+/gate/source/activityLiverIE/gps/setSpectrumFile ../data/Lu-177_IE.txt
+/gate/source/activityLiverIE/setIntensity 1.548E-01
+/gate/source/activityLiverIE/gps/angtype iso
