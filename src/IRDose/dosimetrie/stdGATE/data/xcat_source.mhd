@@ -1,7 +1,0 @@
-NDims = 3 
-DimSize = 84 208 573 
-ElementType = MET_SHORT
-ElementByteOrderMSB = False
-ElementSize = 3.125 3.125 3.125
-ElementSpacing = 3.125 3.125 3.125
-ElementDataFile = xcat_source.raw

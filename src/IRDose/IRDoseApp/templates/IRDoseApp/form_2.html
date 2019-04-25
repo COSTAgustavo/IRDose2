@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+<title>{% block head_title %} {{ title }} | {{ block.super }}IRDose{% endblock head_title %}</title>
+
+{% block content %}
+<h1>{{ title }}</h1>
+{% if form.errors.non_field_errors %}
+   {{ form.errors.non_field_errors }}
+{% endif %}
+<!-- <form enctype="multipart/form-data" method='POST' > {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <button type='submit'>Save</button>
+</form>
+ -->
+<form enctype="multipart/form-data" method='POST' > {% csrf_token %}
+     Name : {{ form.name }} <br> <br>  Organ: {{ form.Organ }}<br>
+     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+       <br>
+       <table class="pure-table pure-table-bordered">
+       <thead>
+           <tr>
+               <th>Time (h)</th>
+               <th>Activity (MBq)</th>
+           </tr>
+       </thead>
+
+       <tbody>
+           <tr class="pure-table-odd">
+               <td>{{ form.t_1 }}</td>
+               <td>{{ form.A_1 }}</td>
+           </tr>
+
+           <tr>
+               <td>{{ form.t_2 }}</td>
+               <td>{{ form.A_2 }}</td>
+           </tr>
+
+           <tr class="pure-table-odd">
+               <td>{{ form.t_3 }}</td>
+               <td>{{ form.A_3 }}</td>
+           </tr>
+           <tr>
+               <td>{{ form.t_4 }}</td>
+               <td>{{ form.A_4 }}</td>
+           </tr>
+        </tbody>
+       </table>
+       <br>
+    <p>Patient's CT {{ form.CT_Patient }} </p><br>
+    <p>Source/Target Organ {{ form.CT_Organ }} </p><br>
+    <p>Second Target Organ {{ form.CT_Target_1 }} </p><br>
+    <p>Third Target Organ {{ form.CT_Target_2 }} </p><br>
+    <button type='submit'>Save</button>
+</form>
+
+{% endblock %}
+
+
+   <!--  <input type='text' name='O_1' placeholder="Organ or compartment"><br/>
+    <input type='text' name='name' placeholder="Name"><br/>
+    <input type='text' name='t_1' placeholder="First time">
+    <input type='text' name='A_1' placeholder="First activity"><br/>
+    <input type='text' name='t_2' placeholder="Second time">
+    <input type='text' name='A_2' placeholder="Second activity"><br/>
+    <input type='text' name='t_3' placeholder="Third time">
+    <input type='text' name='A_3' placeholder="Third activity"><br/>
+    <input type='text' name='t_4' placeholder="Fourth time">
+    <input type='text' name='A_4' placeholder="Fourth activity"><br/> -->

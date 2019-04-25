@@ -38,9 +38,40 @@
        <p>Cumulated activity = {{ CA }}</p>
        <p>Absorbed dose = {{ doseA }}</p>   -->
 
-       <form enctype="multipart/form-data" method='POST'> {% csrf_token %}
-           {{ form.as_p }}
-           <button type='submit'>Save</button>
-       </form>
+       <form enctype="multipart/form-data" method='POST' > {% csrf_token %}
+     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+       <br>
+       <table class="pure-table pure-table-bordered">
+       <thead>
+           <tr>
+               <th>Time (h)</th>
+               <th>Activity (MBq)</th>
+           </tr>
+       </thead>
+
+       <tbody>
+           <tr class="pure-table-odd">
+               <td>{{ form.t_1 }}</td>
+               <td>{{ form.A_1 }}</td>
+           </tr>
+
+           <tr>
+               <td>{{ form.t_2 }}</td>
+               <td>{{ form.A_2 }}</td>
+           </tr>
+
+           <tr class="pure-table-odd">
+               <td>{{ form.t_3 }}</td>
+               <td>{{ form.A_3 }}</td>
+           </tr>
+           <tr>
+               <td>{{ form.t_4 }}</td>
+               <td>{{ form.A_4 }}</td>
+           </tr>
+        </tbody>
+       </table>
+       <br>
+    <button type='submit'>Save</button>
+</form>
 
 {% endblock content%}

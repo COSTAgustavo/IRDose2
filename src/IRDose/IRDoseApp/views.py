@@ -25,7 +25,7 @@ from .registerForm import RegisterForm
 class RegisterView(CreateView):
     form_class = RegisterForm
     template_name = 'registration/register.html'
-    success_url = '/home/'
+    success_url = '/'
 
 class IRDoseListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
@@ -41,6 +41,8 @@ class IRDoseDetailView(LoginRequiredMixin, DetailView):
         AC = CumActivity.objects.filter(owner=self.request.user)
         AC = AC.get(slug = kwargs['object'].slug)
         #AC.Organ = 'New'
+        radioNuclide = AC.nuclidechoice
+        print(radioNuclide)
         AB = AC.Organ
         argName = str(AC.Organ + AC.name)
         CT = str(AC.CT_Patient)

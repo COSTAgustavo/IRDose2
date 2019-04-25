@@ -7,6 +7,7 @@
 <!-- <h2>{{ object.CT_Patient }} <small>{{ object.CT_Organ }} </small></h2> -->
 <p>Created: {{ object.timeStamp}} | Updated {{ object.updated|timesince }} ago.</p>
 <!-- <img src = '{{object.CT_Patient}}'/> -->
+
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
        <table class="pure-table pure-table-bordered">
        <thead>
@@ -38,11 +39,11 @@
         </tbody>
        </table>
        <p>Cumulated activity = {{ CA }}</p>
-       <p>{{ doseS }}</p>
+       <p>Absorbed {{ doseS }}</p>
        {% if dose_t1%}
-          <p>{{ dose_t1 }}</p>
+          <p>Absorbed {{ dose_t1 }}</p>
        {% endif %}
        {% if dose_t2%}
-          <p>{{ dose_t2 }}</p>
+          <p>Absorbed {{ dose_t2 }}</p>
        {% endif %}
 {% endblock content%}

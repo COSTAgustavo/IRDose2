@@ -13,8 +13,10 @@
     <button type='submit'>Save</button>
 </form>
  -->
+
 <form enctype="multipart/form-data" method='POST' > {% csrf_token %}
      Name : {{ form.name }} <br> <br>  Organ: {{ form.Organ }}<br>
+     <br>{{ form.nuclidechoice }}<br>
      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
        <br>
        <table class="pure-table pure-table-bordered">
@@ -51,8 +53,10 @@
     <p>Source/Target Organ {{ form.CT_Organ }} </p><br>
     <p>Second Target Organ {{ form.CT_Target_1 }} </p><br>
     <p>Third Target Organ {{ form.CT_Target_2 }} </p><br>
-    <button type='submit'>Save</button>
+    <button type='submit' >Simulate !</button>
 </form>
+
+
 
 {% endblock %}
 

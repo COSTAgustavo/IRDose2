@@ -6,6 +6,6 @@
 		# start
 		cd /data/mac
 
-		Gate -a [testNumber,LiverWoman_AE][particule,e-][tissue,LiverWoman][nPrimaries,1.117][emissionType,AE][resolution_x,512][resolution_y,512][resolution_z,76][sourceShift_x,249.999872][sourceShift_y,249.999872][sourceShift_z,190.0][pixel_x,0.976562][pixel_y,0.976562][pixel_z,5] mainMacro.mac > ../output/LiverWoman/run_AE.log ;
-		#Gate -a [testNumber,LiverWoman_AE][particule,e-][tissue,LiverWoman][nPrimaries,1.117][emissionType,AE][patientCT,LiverWoman] mainMacro.mac > ../output/LiverWoman/run_AE.log ;
+		Gate -a [testNumber,mkdjvkjsdv_AE][particule,e-][tissue,mkdjvkjsdv][nPrimaries,1.117][emissionType,AE][resolution_x,512][resolution_y,512][resolution_z,76][sourceShift_x,249.999872][sourceShift_y,249.999872][sourceShift_z,190.0][pixel_x,0.976562][pixel_y,0.976562][pixel_z,5] mainMacro.mac > ../output/mkdjvkjsdv/run_AE.log ;
+		#Gate -a [testNumber,mkdjvkjsdv_AE][particule,e-][tissue,mkdjvkjsdv][nPrimaries,1.117][emissionType,AE][patientCT,mkdjvkjsdv] mainMacro.mac > ../output/mkdjvkjsdv/run_AE.log ;
 

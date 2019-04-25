@@ -9,6 +9,8 @@ from .validators import validate_O_1
 
 User = settings.AUTH_USER_MODEL
 
+
+
 # Create your models here.
 class CumActivity(models.Model):
    owner    	= models.ForeignKey(User, on_delete = models.CASCADE)
@@ -34,6 +36,11 @@ class CumActivity(models.Model):
 
    location     = models.CharField(max_length=120, null=True, blank=True)
    category     = models.CharField(max_length=120, null=True, blank=True)
+   NUCLIDE_CHOICES = (
+      ('Lu', 'Lu-177'),
+      ('I', 'I-131')
+   )
+   nuclidechoice = models.CharField(max_length=10, choices=NUCLIDE_CHOICES, default=NUCLIDE_CHOICES[0][0])
 
    #myDateField = models.DateTimeField(auto_now=False, auto_now_add=False)
 
