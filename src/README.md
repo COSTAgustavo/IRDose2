@@ -1,2 +1,0 @@
-# IRDose
-Internal radiation dosimetry
