@@ -8,7 +8,7 @@ djangorestframework==3.8.2
 gunicorn==19.7.1
 Markdown==2.6.11
 mock==2.0.0
-numpy==1.14.2
+numpy==1.22.0
 pandas==0.22.0
 pbr==4.2.0
 Pillow==5.1.0
